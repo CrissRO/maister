@@ -7,7 +7,7 @@ public class Player {
 	private String name;
 	private String color;
 	private int nrWands;
-	private Recipe secretRecipe;
+	private Receipe secretRecipe;
 	private List<Ingredient> collectedIngredients;
 	private Tile location;
 	
