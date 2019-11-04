@@ -3,7 +3,7 @@ package com.gc.main;
 import java.awt.Graphics2D;
 import java.util.List;
 
-public class Player extends Entity {
+public class Player extends Entity implements IRenderable,IUpdateable {
 
 	private String name;
 	private String color;

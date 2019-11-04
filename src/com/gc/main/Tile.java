@@ -1,8 +1,9 @@
 package com.gc.main;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class Tile extends Entity{
+public class Tile extends Entity implements IRenderable,IUpdateable{
 
 	
 	public enum Type{
@@ -20,7 +21,8 @@ public class Tile extends Entity{
 	
 	@Override
 	public void render(Graphics2D ctx) {
-		
+		ctx.setColor(new Color(0,255,0));
+		ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 	}
 	
 	@Override

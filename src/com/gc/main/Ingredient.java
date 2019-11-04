@@ -2,7 +2,7 @@ package com.gc.main;
 
 import java.awt.Graphics2D;
 
-public class Ingredient extends Entity {
+public class Ingredient extends Entity implements IRenderable,IUpdateable{
 
 	private String name;
 	private String description;

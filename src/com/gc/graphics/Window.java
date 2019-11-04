@@ -2,6 +2,9 @@ package com.gc.graphics;
 
 import javax.swing.JFrame;
 
+import com.gc.main.Entity;
+import com.gc.main.IRenderable;
+
 public class Window {
 
 	private final JFrame FRAME;
@@ -16,15 +19,21 @@ public class Window {
 		HEIGHT = height;
 		SCREEN = new Screen();
 		FRAME = new JFrame(title);
+		FRAME.setSize(WIDTH, HEIGHT);
 		FRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		FRAME.setLocationRelativeTo(null);
 		FRAME.add(SCREEN);
 		FRAME.setVisible(true);
 	}
 	
-	public void addEntity(Entity e) {
+	public void addEntity(IRenderable e) {
 		SCREEN.addEntity(e);
 	}
+
+	public Screen getSCREEN() {
+		return SCREEN;
+	}
+	
 	
 	
 }

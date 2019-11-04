@@ -2,23 +2,24 @@ package com.gc.main;
 
 import java.awt.Graphics2D;
 
-public class Entity implements IRenderable, IUpdateable {
+public class Entity{
 
-	private double x;
-	private double y;
-	private double width;
-	private double height;
+	protected double x;
+	protected double y;
+	protected double width;
+	protected double height;
 	
 	public Entity(double x, double y, double width,double height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
+		this.height = height;
 	}
 
 	public double getX() {
 		return x;
 	}
-
+	
 	public void setX(double x) {
 		this.x = x;
 	}
@@ -47,18 +48,22 @@ public class Entity implements IRenderable, IUpdateable {
 		this.height = height;
 	}
 
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void render(Graphics2D ctx) {
-		// TODO Auto-generated method stub
-		
+	public int getIntX() {
+		return (int)x;
 	}
 	
+	public int getIntY() {
+		return (int)y;
+	}
+	
+	public int getIntWidth() {
+		return (int)width;
+	}
+	
+	public int getIntHeight() {
+		return (int)height;
+	}
 	
 	
 	

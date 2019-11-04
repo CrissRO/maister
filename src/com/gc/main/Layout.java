@@ -2,7 +2,7 @@ package com.gc.main;
 
 import java.awt.Graphics2D;
 
-public class Layout extends Entity{
+public class Layout extends Entity  implements IRenderable,IUpdateable{
 
 	private Tile matrix[][];
 	

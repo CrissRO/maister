@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Receipe extends Entity{
+public class Receipe extends Entity  implements IRenderable,IUpdateable{
 
 	private List<Ingredient> ingredients;
 	
