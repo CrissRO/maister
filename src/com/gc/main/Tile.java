@@ -1,6 +1,8 @@
 package com.gc.main;
 
-public class Tile {
+import java.awt.Graphics2D;
+
+public class Tile extends Entity{
 
 	
 	public enum Type{
@@ -10,9 +12,20 @@ public class Tile {
 	private double rotation;
 	private Type type;
 	
-	public Tile(double rotation, Type type) {
+	public Tile(double x, double y, double width, double height,double rotation, Type type) {
+		super(x,y,width,height);
 		this.rotation = rotation;
 		this.type = type;
+	}
+	
+	@Override
+	public void render(Graphics2D ctx) {
+		
+	}
+	
+	@Override
+	public void update() {
+		
 	}
 
 	public double getRotation() {

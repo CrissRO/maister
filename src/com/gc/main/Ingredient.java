@@ -1,15 +1,28 @@
 package com.gc.main;
 
-public class Ingredient {
+import java.awt.Graphics2D;
+
+public class Ingredient extends Entity {
 
 	private String name;
 	private String description;
 	private int nrPoints;
 	
-	public Ingredient(String name, int nrPoints) {
+	public Ingredient(double x, double y, double width, double height, String name, int nrPoints) {
+		super(x,y,width,height);
 		this.name = name;
 		this.description = "default";
 		this.nrPoints = 0;
+	}
+	
+	@Override
+	public void render(Graphics2D ctx) {
+		
+	}
+	
+	@Override
+	public void update() {
+		
 	}
 
 	public String getName() {
@@ -35,11 +48,5 @@ public class Ingredient {
 	public void setNrPoints(int nrPoints) {
 		this.nrPoints = nrPoints;
 	}
-	
-	
-	
-	
-	
-	
 	
 }
