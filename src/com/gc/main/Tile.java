@@ -21,8 +21,29 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 	
 	@Override
 	public void render(Graphics2D ctx) {
-		ctx.setColor(new Color(0,255,0));
-		ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
+		if(type == Type.T_FORM) {
+			ctx.setColor(new Color(153,255,255));
+			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
+			ctx.setColor(new Color(229,204,255));
+			ctx.fillRect(0,10, getIntWidth()/4,getIntHeight());
+			ctx.fillRect(0,getIntHeight()/2, getIntWidth(),getIntHeight()/4);
+			
+		}
+		else if(type == Type.CORNER) {
+			ctx.setColor(new Color(153,255,255));
+			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
+			ctx.setColor(new Color(229,204,255));
+			ctx.fillRect(0,getIntHeight(), getIntWidth(),getIntHeight()/4);
+			ctx.fillRect(0,10, getIntWidth()/4,getIntHeight());
+		}
+		else{
+			ctx.setColor(new Color(153,255,255));
+			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
+			ctx.setColor(new Color(229,204,255));
+			ctx.fillRect(0,getIntHeight()/2+getIntHeight()/4, getIntWidth(),getIntHeight()/4);
+			
+		}
+		
 	}
 	
 	@Override

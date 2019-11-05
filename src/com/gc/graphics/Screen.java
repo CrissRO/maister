@@ -34,9 +34,6 @@ public class Screen extends JPanel{
 		Graphics2D ctx = (Graphics2D)g;
 		ctx.clearRect(0, 0, getWidth(), getHeight());
 		
-		ctx.setColor(new Color(255,0,0));
-		ctx.fillRect(100, 199, 100, 100);
-		
 		for(IRenderable e : entities)
 			e.render(ctx);
 		
