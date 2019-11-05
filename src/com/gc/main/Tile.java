@@ -21,6 +21,9 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 	
 	@Override
 	public void render(Graphics2D ctx) {
+		
+		
+		
 		if(type == Type.T_FORM) {
 			ctx.setColor(new Color(153,255,255));
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
@@ -36,13 +39,40 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 			ctx.fillRect(0,getIntHeight(), getIntWidth(),getIntHeight()/4);
 			ctx.fillRect(0,10, getIntWidth()/4,getIntHeight());
 		}
-		else{
+		else if(type == Type.STRAIGHT){
 			ctx.setColor(new Color(153,255,255));
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
 			ctx.fillRect(0,getIntHeight()/2+getIntHeight()/4, getIntWidth(),getIntHeight()/4);
 			
 		}
+		
+		
+		
+		if(rotation == 0) {
+			ctx.setColor(new Color(0,0,0));
+			ctx.fillRect(30,70,20,20);
+		}
+		else if(rotation == 90) {
+			ctx.setColor(new Color(0,0,0));
+			ctx.fillRect(30,70,20,20);
+			ctx.fillRect(60,70,20,20);
+		}
+		else if(rotation == 180) {
+			ctx.setColor(new Color(0,0,0));
+			ctx.fillRect(30,70,20,20);
+			ctx.fillRect(60,70,20,20);
+			ctx.fillRect(60,40,20,20);
+		}
+		else if(rotation == 270) {
+			ctx.setColor(new Color(0,0,0));
+			ctx.fillRect(30,70,20,20);
+			ctx.fillRect(60,70,20,20);
+			ctx.fillRect(60,40,20,20);
+			ctx.fillRect(30,40,20,20);
+		}
+		
+		
 		
 	}
 	
