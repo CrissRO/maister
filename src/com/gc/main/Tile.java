@@ -12,11 +12,13 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 	
 	private double rotation;
 	private Type type;
+	private Color tileColor;
 	
-	public Tile(double x, double y, double width, double height,double rotation, Type type) {
+	public Tile(double x, double y, double width, double height,double rotation, Type type,Color color) {
 		super(x,y,width,height);
 		this.rotation = rotation;
 		this.type = type;
+		this.tileColor = color;
 	}
 	
 	@Override
@@ -25,25 +27,25 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 		
 		
 		if(type == Type.T_FORM) {
-			ctx.setColor(new Color(153,255,255));
+			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(0,10, getIntWidth()/4,getIntHeight());
-			ctx.fillRect(0,getIntHeight()/2, getIntWidth(),getIntHeight()/4);
+			ctx.fillRect(getIntX()+0,getIntY(), getIntWidth()/4,getIntHeight());
+			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()/2-5,(int)(getIntWidth()),getIntHeight()/4);
 			
 		}
 		else if(type == Type.CORNER) {
-			ctx.setColor(new Color(153,255,255));
+			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(0,getIntHeight(), getIntWidth(),getIntHeight()/4);
-			ctx.fillRect(0,10, getIntWidth()/4,getIntHeight());
+			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()-getIntHeight()/4, getIntWidth(),getIntHeight()/4);
+			ctx.fillRect(getIntX()+0,getIntY(), getIntWidth()/4,getIntHeight());
 		}
 		else if(type == Type.STRAIGHT){
-			ctx.setColor(new Color(153,255,255));
+			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(0,getIntHeight()/2+getIntHeight()/4, getIntWidth(),getIntHeight()/4);
+			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()/2+getIntHeight()/4, getIntWidth(),getIntHeight()/4);
 			
 		}
 		
@@ -51,29 +53,27 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 		
 		if(rotation == 0) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect(30,70,20,20);
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
 		}
 		else if(rotation == 90) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect(30,70,20,20);
-			ctx.fillRect(60,70,20,20);
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
 		}
 		else if(rotation == 180) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect(30,70,20,20);
-			ctx.fillRect(60,70,20,20);
-			ctx.fillRect(60,40,20,20);
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
 		}
 		else if(rotation == 270) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect(30,70,20,20);
-			ctx.fillRect(60,70,20,20);
-			ctx.fillRect(60,40,20,20);
-			ctx.fillRect(30,40,20,20);
-		}
-		
-		
-		
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+
+		}	
 	}
 	
 	@Override
