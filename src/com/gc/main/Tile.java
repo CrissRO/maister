@@ -30,48 +30,47 @@ public class Tile extends Entity implements IRenderable,IUpdateable{
 			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(getIntX()+0,getIntY(), getIntWidth()/4,getIntHeight());
-			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()/2-5,(int)(getIntWidth()),getIntHeight()/4);
+			ctx.fillRect((int)(getIntX()+0.25 * getIntWidth()),getIntY()+getIntHeight()/2, getIntWidth()/2,(int)(getIntHeight()*0.25));
+			ctx.fillRect((int)(getIntX()+0.4 * getIntWidth()),getIntY()+getIntHeight()/2,(int)(getIntWidth()*0.2),(int)(getIntHeight()*0.40));
 			
 		}
 		else if(type == Type.CORNER) {
 			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()-getIntHeight()/4, getIntWidth(),getIntHeight()/4);
-			ctx.fillRect(getIntX()+0,getIntY(), getIntWidth()/4,getIntHeight());
+			ctx.fillRect((int)(getIntX()+0.25 * getIntWidth()),getIntY()+getIntHeight()/2, getIntWidth()/2,(int)(getIntHeight()*0.25));
+			ctx.fillRect((int)(getIntX()+0.25 * getIntWidth()),getIntY()+getIntHeight()/2,(int)(getIntWidth()*0.2),(int)(getIntHeight()*0.40));
 		}
 		else if(type == Type.STRAIGHT){
 			ctx.setColor(tileColor);
 			ctx.fillRect(getIntX(),getIntY(),getIntWidth(),getIntHeight());
 			ctx.setColor(new Color(229,204,255));
-			ctx.fillRect(getIntX()+0,getIntY()+getIntHeight()/2+getIntHeight()/4, getIntWidth(),getIntHeight()/4);
-			
+			ctx.fillRect((int)(getIntX()+0.25 * getIntWidth()),getIntY()+getIntHeight()/2, getIntWidth()/2,(int)(getIntHeight()*0.25));
 		}
 		
 		
 		
 		if(rotation == 0) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
 		}
 		else if(rotation == 90) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
 		}
 		else if(rotation == 180) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
 		}
 		else if(rotation == 270) {
 			ctx.setColor(new Color(0,0,0));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
-			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.20*getIntWidth()),(int)(0.20*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.30*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.30*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
+			ctx.fillRect((int)(getIntX()+0.60*getIntWidth()),(int)(getIntY()+0.60*getIntHeight()),(int)(0.10*getIntWidth()),(int)(0.10*getIntHeight()));
 
 		}	
 	}

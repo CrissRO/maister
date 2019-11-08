@@ -17,9 +17,10 @@ public class Layout extends Entity  implements IRenderable,IUpdateable{
 		
 		colors = new HashMap<>();
 		types = new HashMap<>();
-		colors.put("blue", new Color(0,0,255));
-		colors.put("red", new Color(255,0,0));
-		colors.put("green", new Color(0,255,0));
+		colors.put("blue", new Color(102, 102, 255));
+		colors.put("red", new Color(255, 77, 77));
+		colors.put("green", new Color(128, 255, 128));
+		
 		types.put("corner", Tile.Type.CORNER);
 		types.put("straight", Tile.Type.STRAIGHT);
 		types.put("tform",Tile.Type.T_FORM);
@@ -32,7 +33,7 @@ public class Layout extends Entity  implements IRenderable,IUpdateable{
 		
 		for(int i=0;i<matrix.length;i++)
 			for(int j=0;j<matrix[0].length;j++)
-				matrix[i][j]= new Tile(j*w,i*h,w,h,randomGen.nextInt(4)*90,types.get(types.keySet().toArray()[randomGen.nextInt(types.size())]),colors.get(colors.keySet().toArray()[randomGen.nextInt(colors.size())]));
+				matrix[i][j]= new Tile(j*(w+1),i*(h+1),w,h,randomGen.nextInt(4)*90,types.get(types.keySet().toArray()[randomGen.nextInt(types.size())]),colors.get(colors.keySet().toArray()[randomGen.nextInt(colors.size())]));
 	}
 	
 	@Override
