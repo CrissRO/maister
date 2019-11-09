@@ -1,42 +1,39 @@
 package com.gc.main;
 
 import java.awt.Color;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.gc.graphics.Window;
 
 public class Maister {
 
+	private static Window window;
+	private static Layout board;
+	private static List<Player> players;
+	
+	public static void initGame() {
+		window = new Window(600,600,"Das Labirinth der Meister");
+		board = new Layout(50,50,75,75); 
+		players = new ArrayList<>();
+		
+		
+		players.add(new Player("cici",new Color(255,255,0)));
+		players.add(new Player("giuli",new Color(255,0,255)));
+		players.add(new Player("cici",new Color(0,255,255)));
+		players.add(new Player("giuli",new Color(0,0,255)));
+		
+		board.addPlayers(players);
+		
+		
+		window.addEntity(board);
+		for(Player p : players)
+			window.addEntity(p);
+		
+	}
+	
 	public static void main(String[] args) {
-		
-		Random randomGenerator = new Random();
-		
-		///afisare nr intreg la limita maxima
-		System.out.println(randomGenerator.nextInt(10));
-		
-		String[] names = {"Giuli","Cici","Fabi","Teo"};
-		
-		System.out.println(names[randomGenerator.nextInt(names.length)]);
-		
-		
-		Color[] colors = {new Color(0,0,255),new Color(0,255,255)};
-		
-		System.out.println(colors[randomGenerator.nextInt(colors.length)]);
-		
-		Layout l = new Layout(0,0,75,75);
-		
-		Window w = new Window(600,600,"Das Labirinth der Meister");
-		
-		
-		w.addEntity(l);
-		
-		
-		while(true) {
-			w.getSCREEN().repaint();
-		}
-		
-		
-
+		 		initGame();
 	}
 
 }

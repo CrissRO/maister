@@ -1,8 +1,9 @@
 package com.gc.graphics;
 
+import java.util.List;
+
 import javax.swing.JFrame;
 
-import com.gc.main.Entity;
 import com.gc.main.IRenderable;
 
 public class Window {
@@ -29,7 +30,7 @@ public class Window {
 	public void addEntity(IRenderable e) {
 		SCREEN.addEntity(e);
 	}
-
+	
 	public Screen getSCREEN() {
 		return SCREEN;
 	}
